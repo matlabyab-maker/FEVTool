@@ -51,7 +51,7 @@ class MainActivity : Activity() {
         val toolbar = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
-            setPadding(dp(6), dp(5), dp(6), dp(5))
+            setPadding(0, 0, 0, 0)
         }
 
         toolbarLabels.forEach { label ->
@@ -70,7 +70,7 @@ class MainActivity : Activity() {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 ).apply {
-                    marginEnd = dp(6)
+                    marginEnd = 0
                 }
             }
             toolbar.addView(button)
