@@ -44,7 +44,7 @@ class MainActivity : Activity() {
             setBackgroundColor(Color.rgb(18, 20, 25))
             layoutParams = LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                dp(64)
+                dp(46)
             )
         }
 
@@ -63,6 +63,7 @@ class MainActivity : Activity() {
                 gravity = Gravity.CENTER
                 setPadding(dp(12), 0, dp(12), 0)
                 minWidth = dp(104)
+                scaleX = 0.7f
                 setBackgroundResource(R.drawable.toolbar_button)
                 isClickable = true
                 isFocusable = true
@@ -70,7 +71,7 @@ class MainActivity : Activity() {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 ).apply {
-                    marginEnd = 0
+                    marginEnd = dpFraction(0.1f)
                 }
             }
             toolbar.addView(button)
@@ -110,5 +111,8 @@ class MainActivity : Activity() {
     }
 
     private fun dp(value: Int): Int =
+        (value * resources.displayMetrics.density + 0.5f).toInt()
+
+    private fun dpFraction(value: Float): Int =
         (value * resources.displayMetrics.density + 0.5f).toInt()
 }
