@@ -236,11 +236,7 @@ class MainActivity : Activity() {
         val intervalInput = EditText(this).apply {
             setText(storyboardInterval)
             textSize = 13f
-<<<<<<< HEAD
             setSingleLine(true)
-=======
-            singleLine = true
->>>>>>> branch 'master' of https://github.com/matlabyab-maker/FEVTool.git
             gravity = Gravity.CENTER
             inputType = android.text.InputType.TYPE_CLASS_TEXT
             setTextColor(Color.WHITE)
