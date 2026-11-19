@@ -17,7 +17,8 @@ class MainActivity : Activity() {
         "Export Video",
         "Delete",
         "Color And Light",
-        "Tracks Cut Tool",
+        "Tracks",
+        "Cut Tool",
         "Insert"
     )
 
@@ -57,11 +58,19 @@ class MainActivity : Activity() {
         toolbarLabels.forEach { label ->
             val button = TextView(this).apply {
                 text = label
-                textSize = 13f
+                textSize = 18f
+                maxLines = 2
+                includeFontPadding = false
                 setTextColor(Color.WHITE)
+                if (android.os.Build.VERSION.SDK_INT >= 26) {
+                    setAutoSizeTextTypeUniformWithConfiguration(
+                        10, 18, 1,
+                        android.util.TypedValue.COMPLEX_UNIT_SP
+                    )
+                }
                 typeface = Typeface.create("sans-serif-medium", Typeface.BOLD)
                 gravity = Gravity.CENTER
-                setPadding(dp(12), 0, dp(12), 0)
+                setPadding(dp(5), dp(2), dp(5), dp(2))
                 minWidth = dp(104)
                 scaleX = 0.7f
                 setBackgroundResource(R.drawable.toolbar_button)
